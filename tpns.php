@@ -277,6 +277,13 @@ namespace tpns {
                 );
             }
 
+            if ($this->audienceType == AUDIENCE_TOKEN || 
+                $this->audienceType == AUDIENCE_TOKEN_LIST ||
+                $this->audienceType == AUDIENCE_ACCOUNT || 
+                $this->audienceType == AUDIENCE_TOKEN_LIST) {
+                    unset($this->loop_param);
+                }
+
             $data = json_encode($this);
             return $data;
         }
